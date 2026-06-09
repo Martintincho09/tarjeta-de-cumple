@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css</title>
+    <style>
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    font-family: 'Comic Sans MS', Arial, sans-serif;
+}
+
+h1{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: white;
+    font-size: 24px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    margin: 0;
+}
+
+.borde{
+    position: static;
+    width: auto;
+    height: auto;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.tarjeta-cumple{
+    position: static;
+    background: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FF69B4 100%);
+    color: #fff;
+    padding: 40px 50px;
+    text-align: center;
+    border-radius: 25px;
+    border: 3px solid rgba(255,255,255,0.3);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255,255,255,0.5);
+    max-width: 500px;
+    animation: cardFloat 3s ease-in-out infinite;
+    transform: perspective(1000px);
+}
+
+@keyframes cardFloat{
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+.tarjeta-cumple h2{
+    margin: 0 0 15px 0;
+    font-size: 32px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    letter-spacing: 1px;
+    animation: titleBounce 2s ease-in-out infinite;
+}
+
+@keyframes titleBounce{
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.tarjeta-cumple p{
+    margin: 12px 0;
+    font-size: 14px;
+    color: rgba(255,255,255,0.95);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    line-height: 1.6;
+}
+
+.tarjeta-cumple img{
+    width: 100px;
+    height: 100px;
+    margin-top: 20px;
+    border-radius: 15px;
+    border: 3px solid rgba(255,255,255,0.4);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    animation: imageRotate 4s linear infinite;
+}
+
+@keyframes imageRotate{
+    0%, 100% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(5deg) scale(1.05); }
+}
+
+.buttons{
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+button{
+    cursor: pointer;
+    padding: 12px 28px;
+    border: 2px solid rgba(255,255,255,0.6);
+    border-radius: 50px;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+button:hover{
+    background: rgba(255,255,255,0.35);
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+    border-color: rgba(255,255,255,0.9);
+}
+
+button:active{
+    transform: translateY(-2px) scale(1.02);
+}
+
+.counter{
+    margin-top: 22px;
+    font-size: 16px;
+    color: rgba(255,255,255,0.95);
+    font-weight: bold;
+    padding: 12px 20px;
+    background: rgba(0,0,0,0.2);
+    border-radius: 15px;
+    display: inline-block;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+/* Responsivo para tablets */
+@media (max-width: 768px) {
+    h1{
+        font-size: 18px;
+        top: 12px;
+        left: 12px;
+    }
+    
+    .tarjeta-cumple{
+        padding: 30px 35px;
+        max-width: 90%;
+    }
+    
+    .tarjeta-cumple h2{
+        font-size: 26px;
+    }
+    
+    .tarjeta-cumple p{
+        font-size: 13px;
+    }
+    
+    .tarjeta-cumple img{
+        width: 80px;
+        height: 80px;
+    }
+    
+    button{
+        padding: 10px 20px;
+        font-size: 13px;
+    }
+    
+    .counter{
+        font-size: 14px;
+        padding: 10px 16px;
+    }
+}
+
+/* Responsivo para móviles */
+@media (max-width: 480px) {
+    body{
+        padding: 12px;
+    }
+    
+    h1{
+        font-size: 14px;
+        top: 8px;
+        left: 8px;
+    }
+    
+    .tarjeta-cumple{
+        padding: 25px 20px;
+        border-radius: 18px;
+        max-width: 100%;
+    }
+    
+    .tarjeta-cumple h2{
+        font-size: 20px;
+        margin: 0 0 10px 0;
+    }
+    
+    .tarjeta-cumple p{
+        font-size: 12px;
+        margin: 8px 0;
+    }
+    
+    .tarjeta-cumple img{
+        width: 70px;
+        height: 70px;
+        margin-top: 15px;
+    }
+    
+    .buttons{
+        margin-top: 18px;
+        gap: 10px;
+    }
+    
+    button{
+        padding: 9px 16px;
+        font-size: 12px;
+        border-radius: 40px;
+    }
+    
+    .counter{
+        margin-top: 16px;
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+    <h1>posicion relativa y absoluta</h1>
+    <div class="borde">
+        <div class="tarjeta-cumple">
+            <h2>🎂 ¡te invito a mi cumpleño! 🎉</h2>
+            <p>¡te espero no faltes !</p>
+            <p>⭐ cumple con enanos,gente desnuda,mucho alchol y espuma ⭐</p>
+            <p>18 de abril- 21:00 hrs hasta indefinido</p>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2DdoeDLaoZYcav5uRTKPDfzVBVQHHNNvWhQ&s" alt="">
+            <div class="buttons">
+                <button type="button" id="btnAsistencia">Asistencia</button>
+                <button type="button" id="btnInasistencia">Inasistencia</button>
+            </div>
+            <div class="counter" id="contador">Asistencias: 0 | Inasistencias: 0</div>
+        </div>
+    </div>
+    <script>
+        const btnAsistencia = document.getElementById('btnAsistencia');
+        const btnInasistencia = document.getElementById('btnInasistencia');
+        const contador = document.getElementById('contador');
+        let asistencias = 0;
+        let inasistencias = 0;
+        const formularioURL = 'https://docs.google.com/forms/d/e/1FAIpQLSeYv6k3ShxfL6qR_lC5uVXhdUUimpNUnVVAxLRV8QhFYU8FqA/viewform?usp=publish-editor';
+
+        function actualizarContador() {
+            contador.textContent = `Asistencias: ${asistencias} | Inasistencias: ${inasistencias}`;
+        }
+
+        btnAsistencia.addEventListener('click', () => {
+            asistencias += 1;
+            actualizarContador();
+            window.open(formularioURL, '_blank');
+        });
+
+        btnInasistencia.addEventListener('click', () => {
+            inasistencias += 1;
+            actualizarContador();
+            window.open(formularioURL, '_blank');
+        });
+    </script>
+</body>
+</html>
